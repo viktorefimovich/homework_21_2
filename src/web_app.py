@@ -15,7 +15,7 @@ class MyServer(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
         """ Метод для обработки входящих GET-запросов """
 
-        if self.path == '/':
+        if self.path != '../html/contacts.html':
             self.path = '../html/contacts.html'
         try:
             with open(self.path, 'rb') as file:
