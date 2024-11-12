@@ -28,8 +28,8 @@ class MyServer(BaseHTTPRequestHandler):
 
     def do_POST(self):
         content_length = int(self.headers.get('Content-Length', 0))
-        post_data = self.rfile.read(content_length).decode("utf-8")
-        response = f"Полученные данные POST: {post_data}"
+        post_data = self.rfile.read(content_length)
+        response = f"Полученные данные POST: {post_data.decode("utf-8")}"
         print(response)
 
 
