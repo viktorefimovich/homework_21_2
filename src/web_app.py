@@ -31,6 +31,8 @@ class MyServer(BaseHTTPRequestHandler):
         post_data = self.rfile.read(content_length)
         response = f"Полученные данные POST: {post_data.decode("utf-8")}"
         print(response)
+        self.send_response(200)
+        self.end_headers()
 
 
 if __name__ == "__main__":
